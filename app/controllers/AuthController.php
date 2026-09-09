@@ -25,8 +25,8 @@ class AuthController extends Controller
 
     public function authenticate()
     {
-        $username = trim((string) $this->call->request->post('username', ''));
-        $password = (string) $this->call->request->post('password', '');
+        $username = trim((string) $this->request->post('username', ''));
+        $password = (string) $this->request->post('password', '');
 
         if ($username === '' || $password === '') {
             $this->session->set_flashdata('error', 'Enter both your username and password.');

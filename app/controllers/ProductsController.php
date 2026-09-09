@@ -121,10 +121,10 @@ class ProductsController extends Controller
     private function product_input(): array
     {
         return [
-            'product_name' => trim((string) $this->call->request->post('product_name', '')),
-            'description' => trim((string) $this->call->request->post('description', '')),
-            'price' => trim((string) $this->call->request->post('price', '')),
-            'quantity' => trim((string) $this->call->request->post('quantity', '')),
+            'product_name' => trim((string) $this->request->post('product_name', '')),
+            'description' => trim((string) $this->request->post('description', '')),
+            'price' => trim((string) $this->request->post('price', '')),
+            'quantity' => trim((string) $this->request->post('quantity', '')),
         ];
     }
 
