@@ -9,7 +9,7 @@ $flash = $flash ?? null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?> · LavaLust</title>
+    <title><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?> · Bhen Jay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -26,7 +26,7 @@ $flash = $flash ?? null;
 <?php if ($username !== null): ?>
 <header class="topbar">
     <div class="shell topbar-inner">
-        <a class="brand" href="<?= site_url('products') ?>"><span class="brand-mark">✦</span>LavaLust</a>
+        <a class="brand" href="<?= site_url('products') ?>"><span class="brand-mark">✦</span>Bhen Jay</a>
         <nav class="nav">
             <a class="nav-link" href="<?= site_url('products') ?>">Products</a>
             <a class="nav-link" href="<?= site_url('products/create') ?>">Add product</a>
