@@ -183,6 +183,20 @@ $database['main'] = array(
 $config['base_url'] = 'http://localhost:3000/';
 ```
 
+### LavaLust product catalog exercise
+
+This project includes a session-authenticated product catalog at `/products`.
+The product routes support adding, listing, editing, and deleting records from
+the `products` table defined in the supplied Aiven MySQL schema. Sign in at
+`/login` using a record from the `users` table.
+
+For Render, configure `DB_DRIVER`, `DB_HOST`, `DB_PORT`, `DB_USER`,
+`DB_PASSWORD`, `DB_NAME`, `DB_CHARSET`, and `APP_KEY` as environment variables.
+Never commit `.env` or database credentials. The application accepts both
+password hashes and the plaintext seed format in the laboratory SQL so the
+provided `admin` seed can be used during setup; production accounts should use
+hashed passwords.
+
 ---
 
 ## Building a REST API
