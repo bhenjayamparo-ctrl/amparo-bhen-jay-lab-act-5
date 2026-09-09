@@ -34,9 +34,10 @@ class AuthController extends Controller
         }
 
         $user = $this->AuthModel->find_by_username($username);
-        $valid_password = is_array($user)
-            && isset($user['password'])
-            && (password_verify($password, $user['password']) || hash_equals((string) $user['password'], $password));
+
+$valid_password = is_array($user)
+    && !empty($user['password'])
+    && password_verify($password, (string) $user['password']);
 
         if (!$valid_password) {
             $this->session->set_flashdata('error', 'Those credentials do not match our records.');
