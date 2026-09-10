@@ -7,5 +7,5 @@
         <label class="field"><span class="label">Price <span class="hint">(PHP)</span></span><input class="input" type="number" name="price" min="0" step="0.01" value="<?= htmlspecialchars((string) $product['price'], ENT_QUOTES, 'UTF-8') ?>" required><?= !empty($errors['price']) ? '<span class="error-text">' . htmlspecialchars($errors['price'], ENT_QUOTES, 'UTF-8') . '</span>' : '' ?></label>
         <label class="field"><span class="label">Quantity</span><input class="input" type="number" name="quantity" min="0" step="1" value="<?= htmlspecialchars((string) $product['quantity'], ENT_QUOTES, 'UTF-8') ?>" required><?= !empty($errors['quantity']) ? '<span class="error-text">' . htmlspecialchars($errors['quantity'], ENT_QUOTES, 'UTF-8') . '</span>' : '' ?></label>
     </div>
-    <div class="form-actions"><a class="btn btn-secondary" href="<?= site_url('products') ?>">Cancel</a><button class="btn btn-primary" type="submit"><?= $editing ? 'Save changes' : 'Create product' ?></button></div>
+    <div class="form-actions"><a class="btn btn-secondary" href="<?= site_url('products') ?>">Cancel</a><button class="btn btn-primary" type="submit"><svg><use href="#<?= $editing ? 'icon-edit' : 'icon-plus' ?>"/></svg><?= $editing ? 'Save changes' : 'Create product' ?></button></div>
 </form>

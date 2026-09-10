@@ -10,7 +10,7 @@
         <form class="auth-form" method="post" action="<?= site_url('login') ?>">
             <label class="field"><span class="label">Username</span><input class="input" type="text" name="username" autocomplete="username" required autofocus></label>
             <label class="field"><span class="label">Password</span><input class="input" type="password" name="password" autocomplete="current-password" required></label>
-            <button class="btn btn-primary" type="submit">Sign in <span aria-hidden="true">→</span></button>
+            <button class="btn btn-primary" type="submit">Sign in <svg aria-hidden="true"><use href="#icon-arrow"/></svg></button>
         </form>
     </section>
 </main>
