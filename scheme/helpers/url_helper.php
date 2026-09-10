@@ -118,10 +118,7 @@ if ( ! function_exists('redirect'))
 		{
 			header('Location: ' . $uri, true, ($permanent === true) ? 301 : 302);
 		}
-		if ($exit === true)
-		{
-			exit();
-		}
+		($exit === true) ?? exit();
 	}
 }
 
