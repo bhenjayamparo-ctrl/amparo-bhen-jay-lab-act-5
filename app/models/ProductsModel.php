@@ -11,4 +11,7 @@ class ProductsModel extends Model
         'price',
         'quantity',
     ];
+
+    protected $has_soft_delete = true;
+    protected $soft_delete_column = 'deleted_at';
 }

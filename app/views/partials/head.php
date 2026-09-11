@@ -21,22 +21,35 @@ $flash = $flash ?? null;
         .auth-page{min-height:100vh;display:grid;place-items:center;padding:24px}.auth-card{width:min(100%,430px);padding:36px}.auth-brand{margin-bottom:34px}.auth-title{font-family:'Space Grotesk',sans-serif;font-size:2rem;margin:0 0 8px}.auth-copy{color:var(--muted);line-height:1.55;margin:0 0 28px}.auth-form{display:grid;gap:18px}.auth-form .btn{width:100%;margin-top:4px}.demo-note{border-top:1px solid var(--line);margin-top:28px;padding-top:20px;color:var(--muted);font-size:.8rem;line-height:1.5}
         .btn svg{width:15px;height:15px;flex:none}
         .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}.stat-card{background:linear-gradient(145deg,rgba(22,34,58,.95),rgba(17,26,46,.95));border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;align-items:center;gap:14px}.stat-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(249,115,22,.14);color:var(--brand);flex:none}.stat-icon svg{width:20px;height:20px}.stat-value{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.1}.stat-label{color:var(--muted);font-size:.78rem;margin-top:2px}
-        .meta-bar{background:rgba(255,255,255,.03);border-bottom:1px solid var(--line)}.meta-bar-inner{display:flex;align-items:center;gap:18px;height:42px;overflow-x:auto;scrollbar-width:none}.meta-bar-inner::-webkit-scrollbar{display:none}.meta-label{color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700;flex:none;white-space:nowrap}.meta-icons{display:flex;align-items:center;gap:18px;flex:none}.meta-item{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:var(--muted);white-space:nowrap;flex:none}.meta-item svg{width:15px;height:15px;flex:none}.meta-item span{color:var(--ink)}
+        .meta-bar{background:rgba(255,255,255,.03);border-bottom:1px solid var(--line)}.meta-bar-inner{display:flex;align-items:center;gap:20px;height:44px}.meta-label{color:var(--muted);font-size:.66rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700;flex:none;white-space:nowrap}.meta-icons-scroll{flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%)}.meta-icons-scroll::-webkit-scrollbar{display:none}.meta-icons{display:flex;align-items:center;width:max-content;padding:0 14px}.meta-item{display:inline-flex;align-items:center;gap:7px;padding:0 16px;font-size:.78rem;font-weight:600;color:var(--muted);white-space:nowrap;flex:none;border-right:1px solid var(--line);transition:color .15s}.meta-item:last-child{border-right:0}.meta-item svg{width:16px;height:16px;flex:none;opacity:.95}.meta-item span{color:var(--ink)}.meta-item:hover{color:var(--ink)}
         .site-footer{border-top:1px solid var(--line);margin-top:56px;padding:26px 0}.footer-note{text-align:center;color:var(--muted);font-size:.76rem;margin:0}
         @media(max-width:700px){.shell{padding:0 16px}.topbar-inner{height:auto;padding:16px 0;align-items:flex-start}.nav{gap:12px;flex-wrap:wrap;justify-content:flex-end}.user-chip{display:none}.page-head{align-items:flex-start;flex-direction:column}.form-grid{grid-template-columns:1fr}.field-wide{grid-column:auto}.form-card{padding:22px}.actions{justify-content:flex-start}.stats-grid{grid-template-columns:1fr}.meta-label{display:none}}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .modal-overlay{position:fixed;inset:0;background:rgba(4,8,18,.72);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+        .modal-overlay.open{display:flex}
+        .modal-card{width:min(100%,420px);background:linear-gradient(145deg,rgba(22,34,58,.98),rgba(17,26,46,.98));border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:28px;animation:modal-in .16s ease}
+        @keyframes modal-in{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+        .modal-icon{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(239,68,68,.14);color:#fca5a5;margin-bottom:16px}
+        .modal-icon svg{width:21px;height:21px}
+        .modal-title{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;margin:0 0 8px}
+        .modal-body{color:var(--muted);line-height:1.55;margin:0 0 24px;font-size:.9rem}
+        .modal-actions{display:flex;justify-content:flex-end;gap:10px}
+        .btn[disabled]{opacity:.6;cursor:not-allowed;transform:none}
     </style>
 </head>
 <body>
 <div class="meta-bar">
     <div class="shell meta-bar-inner">
         <span class="meta-label">Built with</span>
-        <div class="meta-icons">
-            <span class="meta-item" style="color:#fb923c"><svg><use href="#icon-flame"/></svg><span>LavaLust</span></span>
-            <span class="meta-item" style="color:#c9d1d9"><svg><use href="#icon-git"/></svg><span>GitHub</span></span>
-            <span class="meta-item" style="color:#22d3ee"><svg><use href="#icon-db"/></svg><span>Aiven MySQL</span></span>
-            <span class="meta-item" style="color:#a78bfa"><svg><use href="#icon-cloud"/></svg><span>Render</span></span>
-            <span class="meta-item" style="color:#60a5fa"><svg><use href="#icon-grid"/></svg><span>Navicat</span></span>
-            <span class="meta-item" style="color:#38bdf8"><svg><use href="#icon-code"/></svg><span>VS Code</span></span>
+        <div class="meta-icons-scroll">
+            <div class="meta-icons">
+                <span class="meta-item" style="color:#fb923c"><svg><use href="#icon-flame"/></svg><span>LavaLust</span></span>
+                <span class="meta-item" style="color:#c9d1d9"><svg><use href="#icon-git"/></svg><span>GitHub</span></span>
+                <span class="meta-item" style="color:#22d3ee"><svg><use href="#icon-db"/></svg><span>Aiven MySQL</span></span>
+                <span class="meta-item" style="color:#a78bfa"><svg><use href="#icon-cloud"/></svg><span>Render</span></span>
+                <span class="meta-item" style="color:#60a5fa"><svg><use href="#icon-grid"/></svg><span>Navicat</span></span>
+                <span class="meta-item" style="color:#38bdf8"><svg><use href="#icon-code"/></svg><span>VS Code</span></span>
+            </div>
         </div>
     </div>
 </div>

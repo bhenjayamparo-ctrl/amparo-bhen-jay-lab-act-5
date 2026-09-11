@@ -24,6 +24,7 @@ class ProductsController extends Controller
     {
         $products = $this->ProductsModel
             ->query()
+            ->where_null('deleted_at')
             ->order_by('created_at', 'DESC')
             ->get_all();
 
@@ -106,7 +107,12 @@ class ProductsController extends Controller
             show_404('Product not found', 'The requested product does not exist.');
         }
 
-        $this->ProductsModel->delete($product_id);
+        $product = $this->ProductsModel->find($product_id);
+        if (!is_array($product)) {
+            show_404('Product not found', 'The requested product does not exist.');
+        }
+
+        $this->ProductsModel->soft_delete($product_id);
         $this->session->set_flashdata('success', 'Product deleted successfully.');
         redirect('products');
     }
