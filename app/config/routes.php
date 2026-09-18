@@ -44,14 +44,35 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 */
 /** @var object $router **/
 
+// Register the middleware map before the router dispatches any route.
+require_once APP_DIR . 'config/middleware.php';
+
 $router->get('/', 'Welcome::index');
-$router->get('/login', 'AuthController::login');
-$router->post('/login', 'AuthController::authenticate');
+
+/*
+| -------------------------------------------------------------------
+| AUTHENTICATION ROUTES
+| -------------------------------------------------------------------
+| 'guest' middleware keeps an already-logged-in user from seeing the
+| login form again.
+*/
+$router->get('/login', 'AuthController::login')->middleware('guest');
+$router->post('/login', 'AuthController::authenticate')->middleware('guest');
 $router->post('/logout', 'AuthController::logout');
 
-$router->get('/products', 'ProductsController::index');
-$router->get('/products/create', 'ProductsController::create');
-$router->post('/products', 'ProductsController::store');
-$router->get('/products/edit/{id}', 'ProductsController::edit');
-$router->post('/products/update/{id}', 'ProductsController::update');
-$router->post('/products/delete/{id}', 'ProductsController::delete');
+/*
+| -------------------------------------------------------------------
+| PRODUCT MANAGEMENT ROUTES (protected - requires login)
+| -------------------------------------------------------------------
+| Every route in this group runs through AuthMiddleware first. If the
+| visitor is not logged in, AuthMiddleware redirects to /login and the
+| ProductsController action never even runs.
+*/
+$router->group(['prefix' => '/products', 'middleware' => 'auth'], function ($router) {
+    $router->get('/', 'ProductsController::index');
+    $router->get('/create', 'ProductsController::create');
+    $router->post('/', 'ProductsController::store');
+    $router->get('/edit/{id}', 'ProductsController::edit')->where_number('id');
+    $router->post('/update/{id}', 'ProductsController::update')->where_number('id');
+    $router->post('/delete/{id}', 'ProductsController::delete')->where_number('id');
+});

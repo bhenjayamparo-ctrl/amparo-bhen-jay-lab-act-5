@@ -41,4 +41,17 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 | Used for adding middlewares
 |
 */
-$config['middlewares'] = [];
+require_once APP_DIR . 'middlewares/AuthMiddleware.php';
+require_once APP_DIR . 'middlewares/GuestMiddleware.php';
+
+$middleware_config = [
+    'auth'  => new AuthMiddleware(),
+    'guest' => new GuestMiddleware(),
+];
+
+// Make the middleware map available to the Middleware kernel class
+// right away. This file is required directly from routes.php, which
+// runs before the router dispatches -- earlier than the normal config
+// autoload (which only fires once a controller is constructed, too
+// late for middleware to guard a route).
+get_config(['middlewares' => $middleware_config]);
