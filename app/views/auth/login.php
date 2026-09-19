@@ -1,12 +1,12 @@
 <?php defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed'); ?>
 <?php include APP_DIR . 'views/partials/head.php'; ?>
 <main class="auth-page">
+    <div class="auth-embers" aria-hidden="true">
+        <?php for ($i = 0; $i < 16; $i++): ?><i style="--x:<?= mt_rand(2, 98) ?>%;--s:<?= mt_rand(3, 7) ?>px;--d:<?= mt_rand(9, 18) ?>s;--dl:-<?= mt_rand(0, 14) ?>s;--dx:<?= mt_rand(-50, 50) ?>px"></i><?php endfor; ?>
+    </div>
     <section class="panel auth-card">
-        <div class="auth-logo">
-            <svg class="mark" aria-hidden="true"><use href="#logo-mark"/></svg>
-            <span class="name">Bhen Jay</span>
-            <span class="tag">Product studio</span>
-        </div>
+        <?php include APP_DIR . 'views/auth/_mascot.php'; ?>
+        <div class="auth-brand"><svg aria-hidden="true"><use href="#logo-mark"/></svg><span><b>Bhen Jay</b> &middot; Product studio</span></div>
         <h1 class="auth-title">Welcome back.</h1>
         <p class="auth-copy">Sign in to manage your catalog, inventory, and product details.</p>
         <?php if (!empty($error)): ?><div class="alert alert-error" role="alert" aria-live="assertive"><svg aria-hidden="true"><use href="#i-circle-alert"/></svg><span><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></span></div><?php endif; ?>
