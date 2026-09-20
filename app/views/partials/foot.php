@@ -7,11 +7,11 @@ $__nonce = defined('CSP_NONCE') ? ' nonce="' . CSP_NONCE . '"' : '';
         <div class="built-with">
             <span class="bw-label">Built with</span>
             <ul class="dock" aria-label="Technologies used">
-                <li data-label="LavaLust"><span class="dock-icon"><svg aria-hidden="true"><use href="#logo-lavalust"/></svg></span><span class="sr-only">LavaLust</span></li>
+                <li data-label="LavaLust"><span class="dock-icon fill"><svg aria-hidden="true"><use href="#logo-lavalust"/></svg></span><span class="sr-only">LavaLust</span></li>
                 <li data-label="GitHub"><span class="dock-icon mono"><svg aria-hidden="true"><use href="#logo-github"/></svg></span><span class="sr-only">GitHub</span></li>
                 <li data-label="Aiven MySQL"><span class="dock-icon wide"><svg aria-hidden="true"><use href="#logo-aiven"/></svg></span><span class="sr-only">Aiven MySQL</span></li>
                 <li data-label="Render"><span class="dock-icon mono"><svg aria-hidden="true"><use href="#logo-render"/></svg></span><span class="sr-only">Render</span></li>
-                <li data-label="Navicat"><span class="dock-icon"><svg aria-hidden="true"><use href="#logo-navicat"/></svg></span><span class="sr-only">Navicat</span></li>
+                <li data-label="Navicat"><span class="dock-icon big"><svg aria-hidden="true"><use href="#logo-navicat"/></svg></span><span class="sr-only">Navicat</span></li>
                 <li data-label="VS Code"><span class="dock-icon"><svg aria-hidden="true"><use href="#logo-vscode"/></svg></span><span class="sr-only">VS Code</span></li>
             </ul>
         </div>
@@ -21,6 +21,7 @@ $__nonce = defined('CSP_NONCE') ? ' nonce="' . CSP_NONCE . '"' : '';
 
 <div class="modal-overlay" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle" aria-describedby="confirmModalBody">
     <div class="modal-card">
+        <?php $ember = ['role' => 'modal', 'class' => 'perch c', 'style' => '--w:150px']; include __DIR__ . '/ember.php'; ?>
         <span class="modal-icon"><svg aria-hidden="true"><use href="#i-trash"/></svg></span>
         <h2 class="modal-title" id="confirmModalTitle">Are you sure?</h2>
         <p class="modal-body" id="confirmModalBody">This action cannot be undone.</p>
@@ -195,5 +196,6 @@ $__nonce = defined('CSP_NONCE') ? ' nonce="' . CSP_NONCE . '"' : '';
     }
 })();
 </script>
+<?php include __DIR__ . '/ember_js.php'; ?>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <h1 class="heading">Edit product</h1><p class="subheading">Update the details below, then save your changes.</p>
     <div class="form-layout">
         <section class="panel form-card">
+            <?php $ember = ['role' => 'form', 'class' => 'perch r hide-sm', 'style' => '--w:168px;--pr:34px', 'say' => 'Making some changes?', 'sayclass' => 'l']; include APP_DIR . 'views/partials/ember.php'; ?>
             <div class="card-head"><h2 class="card-title">Product details</h2><p class="card-desc">Changes appear in your catalog as soon as you save.</p></div>
             <?php include APP_DIR . 'views/products/_form.php'; ?>
         </section>

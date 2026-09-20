@@ -27,7 +27,10 @@ $avatar_initial = function ($name) {
         <?php if (!empty($flash)): ?><div class="alert alert-success" role="status" aria-live="polite"><svg aria-hidden="true"><use href="#i-circle-check"/></svg><span><?= htmlspecialchars($flash, ENT_QUOTES, 'UTF-8') ?></span></div><?php endif; ?>
         <div class="page-head">
             <div><h1 class="heading">Products</h1><p class="subheading">Keep your catalog clear, current, and ready for your next customer.</p></div>
-            <a class="btn btn-primary" href="<?= site_url('products/create') ?>"><svg aria-hidden="true"><use href="#i-plus"/></svg>Add product</a>
+            <div class="cta-host">
+                <?php if (!empty($products)): ?><?php $ember = ['role' => 'cta', 'class' => 'perch c hide-sm', 'style' => '--w:128px;--sink:.06', 'say' => 'Got new stock to add?', 'sayclass' => 'l']; include APP_DIR . 'views/partials/ember.php'; ?><?php endif; ?>
+                <a class="btn btn-primary" href="<?= site_url('products/create') ?>"><svg aria-hidden="true"><use href="#i-plus"/></svg>Add product</a>
+            </div>
         </div>
 
         <div class="stats-grid">
@@ -39,7 +42,7 @@ $avatar_initial = function ($name) {
         <section class="panel table-wrap">
             <?php if (empty($products)): ?>
                 <div class="empty-state">
-                    <span class="stat-icon" style="--tint:#f2701a"><svg aria-hidden="true"><use href="#i-package-open"/></svg></span>
+                    <?php $ember = ['role' => 'empty', 'class' => 'flow', 'style' => '--w:230px', 'say' => "It's quiet in here..."]; include APP_DIR . 'views/partials/ember.php'; ?>
                     <strong>Your catalog is empty</strong>
                     <p>Add your first product to get started.</p>
                     <a class="btn btn-primary" href="<?= site_url('products/create') ?>"><svg aria-hidden="true"><use href="#i-plus"/></svg>Add product</a>

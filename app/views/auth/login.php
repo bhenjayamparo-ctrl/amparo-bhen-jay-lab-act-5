@@ -1,6 +1,7 @@
 <?php defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed'); ?>
 <?php include APP_DIR . 'views/partials/head.php'; ?>
 <main class="auth-page">
+    <button class="btn theme-fab" type="button" id="themeToggle" aria-label="Toggle light and dark theme"><svg class="i-moon" width="18" height="18" aria-hidden="true"><use href="#i-moon"/></svg><svg class="i-sun" width="18" height="18" aria-hidden="true"><use href="#i-sun"/></svg></button>
     <div class="auth-embers" aria-hidden="true">
         <?php for ($i = 0; $i < 16; $i++): ?><i style="--x:<?= mt_rand(2, 98) ?>%;--s:<?= mt_rand(3, 7) ?>px;--d:<?= mt_rand(9, 18) ?>s;--dl:-<?= mt_rand(0, 14) ?>s;--dx:<?= mt_rand(-50, 50) ?>px"></i><?php endfor; ?>
     </div>

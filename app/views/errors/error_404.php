@@ -58,7 +58,7 @@ body{margin:0;display:grid;place-items:center;padding:24px;background:var(--bg);
 .ambient i:nth-child(1){top:-24vmax;left:-14vmax;background:radial-gradient(closest-side,var(--b1),transparent)}
 .ambient i:nth-child(2){top:8vmax;right:-22vmax;background:radial-gradient(closest-side,var(--b2),transparent)}
 .ambient i:nth-child(3){bottom:-30vmax;left:14vmax;background:radial-gradient(closest-side,var(--b3),transparent)}
-.card{position:relative;width:min(100%,460px);padding:40px 34px 30px;text-align:center;border-radius:28px;background:var(--card);-webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%);box-shadow:inset 0 1px 0 var(--edge),0 0 0 1px var(--border),0 34px 60px -34px var(--shadow)}
+.card{position:relative;margin-top:120px;width:min(100%,460px);padding:40px 34px 30px;text-align:center;border-radius:28px;background:var(--card);-webkit-backdrop-filter:blur(28px) saturate(170%);backdrop-filter:blur(28px) saturate(170%);box-shadow:inset 0 1px 0 var(--edge),0 0 0 1px var(--border),0 34px 60px -34px var(--shadow)}
 .mark{width:64px;height:64px;margin:0 auto 18px;display:block;filter:drop-shadow(0 12px 22px rgba(240,50,60,.35))}
 .badge{display:inline-block;margin-bottom:12px;padding:4px 12px;border-radius:99px;font-size:.8rem;font-weight:600;color:light-dark(#b8480a,#ff9a5c);background:light-dark(rgba(238,106,18,.12),rgba(255,140,70,.14))}
 h1{margin:0 0 8px;font-size:1.9rem;font-weight:700;letter-spacing:-.04em;line-height:1.1}
@@ -75,49 +75,12 @@ h1{margin:0 0 8px;font-size:1.9rem;font-weight:700;letter-spacing:-.04em;line-he
 .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;padding:2px 7px;border-radius:6px;color:var(--fg);background:var(--hover);box-shadow:0 0 0 1px var(--border)}
 @media(max-width:480px){.card{padding:32px 22px 24px}.actions .btn{flex:1 1 100%}}
 </style>
+<?php include __DIR__ . '/../partials/ember_css.php'; ?>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
 <main class="card" role="main">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" class="mark" width="64" height="64" aria-hidden="true">
-  <defs>
-    <linearGradient id="er-bg" x1="140" y1="0" x2="880" y2="1024" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFB443"/>
-      <stop offset=".48" stop-color="#FF6B1F"/>
-      <stop offset="1" stop-color="#F0254F"/>
-    </linearGradient>
-    <radialGradient id="er-low" cx="60%" cy="112%" r="70%">
-      <stop offset="0" stop-color="#FF2D6F" stop-opacity=".55"/>
-      <stop offset="1" stop-color="#FF2D6F" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="er-glow" cx="30%" cy="8%" r="75%">
-      <stop offset="0" stop-color="#fff" stop-opacity=".55"/>
-      <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="er-rim" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fff" stop-opacity=".75"/>
-      <stop offset=".35" stop-color="#fff" stop-opacity=".05"/>
-      <stop offset="1" stop-color="#fff" stop-opacity=".22"/>
-    </linearGradient>
-    <linearGradient id="er-glyph" x1="0" y1="256" x2="0" y2="790" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fff"/>
-      <stop offset="1" stop-color="#FFE9DA"/>
-    </linearGradient>
-    <filter id="er-shadow" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#8A1030" flood-opacity=".38"/>
-    </filter>
-    <clipPath id="er-clip"><path d="M1024 512 L1023 705 L1021 766 L1017 810 L1011 845 L1004 875 L995 900 L985 922 L972 941 L958 958 L941 972 L922 985 L900 995 L875 1004 L845 1011 L810 1017 L766 1021 L705 1023 L512 1024 L319 1023 L258 1021 L214 1017 L179 1011 L149 1004 L124 995 L102 985 L83 972 L66 958 L52 941 L39 922 L29 900 L20 875 L13 845 L7 810 L3 766 L1 705 L0 512 L1 319 L3 258 L7 214 L13 179 L20 149 L29 124 L39 102 L52 83 L66 66 L83 52 L102 39 L124 29 L149 20 L179 13 L214 7 L258 3 L319 1 L512 0 L705 1 L766 3 L810 7 L845 13 L875 20 L900 29 L922 39 L941 52 L958 66 L972 83 L985 102 L995 124 L1004 149 L1011 179 L1017 214 L1021 258 L1023 319Z"/></clipPath>
-  </defs>
-  <path d="M1024 512 L1023 705 L1021 766 L1017 810 L1011 845 L1004 875 L995 900 L985 922 L972 941 L958 958 L941 972 L922 985 L900 995 L875 1004 L845 1011 L810 1017 L766 1021 L705 1023 L512 1024 L319 1023 L258 1021 L214 1017 L179 1011 L149 1004 L124 995 L102 985 L83 972 L66 958 L52 941 L39 922 L29 900 L20 875 L13 845 L7 810 L3 766 L1 705 L0 512 L1 319 L3 258 L7 214 L13 179 L20 149 L29 124 L39 102 L52 83 L66 66 L83 52 L102 39 L124 29 L149 20 L179 13 L214 7 L258 3 L319 1 L512 0 L705 1 L766 3 L810 7 L845 13 L875 20 L900 29 L922 39 L941 52 L958 66 L972 83 L985 102 L995 124 L1004 149 L1011 179 L1017 214 L1021 258 L1023 319Z" fill="url(#er-bg)"/>
-  <g clip-path="url(#er-clip)">
-    <rect width="1024" height="1024" fill="url(#er-glow)"/>
-    <rect width="1024" height="1024" fill="url(#er-low)"/>
-  </g>
-  <path d="M1024 512 L1023 705 L1021 766 L1017 810 L1011 845 L1004 875 L995 900 L985 922 L972 941 L958 958 L941 972 L922 985 L900 995 L875 1004 L845 1011 L810 1017 L766 1021 L705 1023 L512 1024 L319 1023 L258 1021 L214 1017 L179 1011 L149 1004 L124 995 L102 985 L83 972 L66 958 L52 941 L39 922 L29 900 L20 875 L13 845 L7 810 L3 766 L1 705 L0 512 L1 319 L3 258 L7 214 L13 179 L20 149 L29 124 L39 102 L52 83 L66 66 L83 52 L102 39 L124 29 L149 20 L179 13 L214 7 L258 3 L319 1 L512 0 L705 1 L766 3 L810 7 L845 13 L875 20 L900 29 L922 39 L941 52 L958 66 L972 83 L985 102 L995 124 L1004 149 L1011 179 L1017 214 L1021 258 L1023 319Z" fill="none" stroke="url(#er-rim)" stroke-width="6"/>
-  <g fill="none" stroke="url(#er-glyph)" stroke-width="92" stroke-linecap="round" stroke-linejoin="round" filter="url(#er-shadow)" transform="translate(18 -11)">
-    <path d="M392 256 V622 C392 730 336 790 236 790" /><path d="M392 256 H560 C650 256 706 306 706 384 C706 462 650 512 560 512 H392" /><path d="M392 512 H588 C688 512 752 566 752 650 C752 734 688 790 588 790 H392" />
-  </g>
-</svg>
+  <?php $ember = ['role' => 'lost', 'class' => 'perch c', 'style' => '--w:190px', 'defs' => true]; include __DIR__ . '/../partials/ember.php'; ?>
   <div class="badge">404 · Not Found</div>
   <h1><?= html_escape($heading) ?></h1>
   <div class="message"><?= html_escape($message) ?></div>
@@ -131,5 +94,6 @@ h1{margin:0 0 8px;font-size:1.9rem;font-weight:700;letter-spacing:-.04em;line-he
     <span>to focus the address bar and retype the URL.</span>
   </div>
 </main>
+<?php include __DIR__ . '/../partials/ember_js.php'; ?>
 </body>
 </html>

@@ -5,6 +5,8 @@
         <div class="page-head">
             <div><h1 class="heading">Users</h1><p class="subheading">Everyone with access to this workspace.</p></div>
         </div>
+        <div class="perch-host">
+        <?php $ember = ['role' => 'plain', 'class' => 'perch r hide-sm', 'style' => '--w:150px;--pr:34px', 'say' => 'Meet the crew!', 'sayclass' => 'l']; include APP_DIR . 'views/partials/ember.php'; ?>
         <section class="panel table-wrap">
             <div class="table-scroll">
             <table class="table">
@@ -23,6 +25,7 @@
             </table>
             </div>
         </section>
+        </div>
     </div>
 </main>
 <?php include APP_DIR . 'views/partials/foot.php'; ?>
