@@ -11,12 +11,6 @@ class ProductsController extends Controller
         $this->call->database();
     }
 
-    // Note: authentication is enforced by AuthMiddleware, which is
-    // attached to every /products route in app/config/routes.php.
-    // By the time an action here runs, the visitor is already known
-    // to be logged in, so this controller only needs the session for
-    // reading data (username, flash messages), not for guarding access.
-
     public function index()
     {
         $products = $this->ProductsModel
